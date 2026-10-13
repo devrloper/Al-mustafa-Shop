@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <div className="container empty-state not-found"><span className="eyebrow">404 · PAGE NOT FOUND</span><h1>This page took a <em>wrong turn.</em></h1><p>The page you're looking for may have moved or no longer exists.</p><Link href="/" className="btn btn-primary">Back to home</Link></div>}

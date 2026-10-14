@@ -12,15 +12,15 @@ const categories = [
  {name:"Stationery",desc:"Make room for new ideas.",href:"/products?category=Stationery",image:"https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85",icon:Sparkles,number:"03"}
 ];
 export default function HomePage() {
- return <div>
+ return <div className="home-page">
   <section className="hero-section"><div className="container hero-grid"><motion.div className="hero-copy" initial={{opacity:0,x:-20}} animate={{opacity:1,x:0}} transition={{duration:.6}}>
-    <span className="eyebrow"><span/> YOUR EVERYDAY HAPPY PLACE</span><h1>Everything you love,<br/><em>all in one place.</em></h1><p>Discover mobile accessories, thoughtful gifts, and everyday stationery at AL Mustafa Shop. Good finds for every kind of day.</p>
+    <span className="eyebrow"><span/> THE LITTLE JOY EDIT</span><h1>Little things,<br/><em>lovely everyday.</em></h1><p>Find thoughtful gifts, handy tech and stationery to make ordinary days feel a little more special.</p>
     <div className="hero-buttons"><Link href="/products" className="btn btn-primary">Shop now <ArrowRight size={18}/></Link><Link href="#categories" className="btn btn-light">Explore categories <ArrowUpRight size={17}/></Link></div>
-    <div className="hero-proof"><div className="proof-avatars"><span>A</span><span>M</span><span>S</span></div><div><strong>Small finds, big delight</strong><small>Thoughtful picks for everyday life</small></div></div>
+    <div className="hero-proof"><div className="proof-avatars"><span>✳</span><span>♡</span><span>✦</span></div><div><strong>A little joy in every find</strong><small>Curated for gifting, making and everyday life</small></div></div>
   </motion.div><motion.div className="hero-visual" initial={{opacity:0,scale:.96}} animate={{opacity:1,scale:1}} transition={{duration:.7,delay:.1}}>
     <div className="hero-image-main"><Image src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=1200&q=90" alt="Curated mobile accessories and everyday essentials" fill priority sizes="(max-width: 900px) 90vw, 50vw" className="cover-image" unoptimized/></div>
-    <div className="floating-note note-top"><span className="note-icon red"><Gift size={19}/></span><span><b>Gifts that feel special</b><small>Made for your moments</small></span></div>
-    <div className="floating-note note-bottom"><span className="note-icon green"><PackageCheck size={19}/></span><span><b>Everyday essentials</b><small>All in one happy place</small></span></div><div className="hero-orbit"></div>
+    <div className="floating-note note-top"><span className="note-icon red"><Gift size={19}/></span><span><b>A giftable little moment</b><small>For someone you love</small></span></div>
+    <div className="floating-note note-bottom"><span className="note-icon green"><PackageCheck size={19}/></span><span><b>Your everyday edit</b><small>Useful things, picked with care</small></span></div><div className="hero-orbit"></div><span className="hero-sparkle hero-sparkle-one">✳</span><span className="hero-sparkle hero-sparkle-two">✦</span>
   </motion.div></div></section>
   <section className="benefits-strip"><div className="container benefits-grid">{[{icon:ShieldCheck,title:"Quality picks",desc:"Chosen with care"},{icon:BadgeCheck,title:"Great value",desc:"Everyday-friendly prices"},{icon:Truck,title:"Easy ordering",desc:"Simple shopping experience"},{icon:HeartHandshake,title:"Friendly support",desc:"Here when you need us"}].map(x=><div className="benefit" key={x.title}><span><x.icon size={22}/></span><div><b>{x.title}</b><small>{x.desc}</small></div></div>)}</div></section>
   <section id="categories" className="section container"><div className="section-heading"><div><span className="eyebrow">A LITTLE SOMETHING FOR EVERYONE</span><h2>Find your kind of <em>happy.</em></h2><p>Browse the things that make everyday life a little brighter.</p></div><Link className="text-link" href="/products">View all products <ArrowRight size={17}/></Link></div>

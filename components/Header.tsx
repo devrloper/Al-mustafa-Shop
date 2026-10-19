@@ -8,10 +8,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const { cartCount } = useStore();
-  const nav = [["Home","/"],["Products","/products"],["Mobile Accessories","/products?category=Mobile%20Accessories"],["Gifts","/products?category=Gifts"],["Stationery","/products?category=Stationery"],["About Us","/about"],["Contact Us","/contact"]];
+  const nav = [["Home","/"],["All Products","/products"],["Stationery","/products?category=Stationery"],["Gifts & Toys","/products?category=Gifts"],["Sports","/products?category=Sports%20Items"],["Mobile Accessories","/products?category=Mobile%20Accessories"],["Printing Services","/printing-services"],["About Us","/about"],["Contact","/contact"]];
   function submit(e: React.FormEvent) { e.preventDefault(); window.location.href = `/products?q=${encodeURIComponent(search)}`; }
   return <header className="site-header">
-    <div className="topline"><div className="container top-inner"><span>Little things. Lovely finds. Everyday value.</span><span>Customer support made easy <span className="top-green">●</span></span></div></div>
+    <div className="topline"><div className="container top-inner"><span>One stop for all your stationery, gifts & printing needs</span><span>Call & WhatsApp: 0335-7476789</span></div></div>
     <div className="container header-main">
       <button className="icon-button mobile-menu" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>{open ? <X/> : <Menu/>}</button>
       <Logo/>
@@ -21,6 +21,6 @@ export default function Header() {
         <Link className="header-action cart-action" href="/cart"><span className="cart-icon"><ShoppingCart/><i>{cartCount}</i></span><span>Cart</span></Link>
       </div>
     </div>
-    <nav className={`nav-bar ${open ? "nav-open" : ""}`}><div className="container nav-inner">{nav.map(([label,href])=><Link key={label} href={href} onClick={()=>setOpen(false)}>{label}</Link>)}<a className="whatsapp-link" href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ""}`} target="_blank" rel="noreferrer"><MessageCircle size={16}/> WhatsApp</a></div></nav>
+    <nav className={`nav-bar ${open ? "nav-open" : ""}`}><div className="container nav-inner">{nav.map(([label,href])=><Link key={label} href={href} onClick={()=>setOpen(false)}>{label}</Link>)}<a className="whatsapp-link" href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "923357476789"}`} target="_blank" rel="noreferrer"><MessageCircle size={16}/> WhatsApp</a></div></nav>
   </header>;
 }

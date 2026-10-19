@@ -1,0 +1,12 @@
+﻿import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, FileText, IdCard, Layers3, Printer, ScanLine } from "lucide-react";
+const services = [
+ {icon:Printer,title:"Photocopy & printing",copy:"Black and white or color copies for school, office and everyday needs."},
+ {icon:ScanLine,title:"Scanning",copy:"Turn paper documents into clear digital copies."},
+ {icon:Layers3,title:"Lamination & binding",copy:"Protect important pages and neatly bind your documents."},
+ {icon:IdCard,title:"ID & passport photos",copy:"Ask us about ID card printing and passport size photos."},
+ {icon:FileText,title:"Document finishing",copy:"Spiral binding and other practical finishing for reports and projects."}
+];
+export default function PrintingServicesPage(){return <div className="printing-page"><div className="container"><div className="breadcrumbs"><Link href="/">Home</Link> / <b>Printing Services</b></div><section className="print-hero"><div className="print-hero-copy"><span className="eyebrow">AL-MUSTAFA · SHAHAREED PARK</span><h1>Print, copy &amp; finish<br/><em>with care.</em></h1><p>From a quick photocopy to school projects and office documents, get friendly print services at your neighborhood stationery shop.</p><div className="hero-buttons"><a className="btn btn-primary" href="https://wa.me/923357476789">Ask on WhatsApp <ArrowRight size={17}/></a><a className="btn btn-light" href="tel:+923357476789">Call 0335-7476789</a></div></div><div className="print-hero-image"><Image src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=1100&q=90" alt="Modern printer ready for a print job" fill priority sizes="(max-width: 800px) 100vw, 50vw" className="cover-image" unoptimized/></div></section>
+<section className="print-services"><div className="section-heading"><div><span className="eyebrow">WHAT WE CAN HELP WITH</span><h2>Printing and document <em>services.</em></h2><p>Have a special size or quantity? Message us and we’ll help you plan it.</p></div></div><div className="print-service-grid">{services.map(({icon:Icon,title,copy})=><article className="print-service-card" key={title}><span><Icon size={22}/></span><h3>{title}</h3><p>{copy}</p></article>)}</div></section><section className="print-location"><div><span className="eyebrow">DROP BY THE SHOP</span><h2>Right here in <em>Shahareed Park.</em></h2><p>Opposite Tanveer Sabzi Shop</p></div><a href="https://wa.me/923357476789">Message us before you visit <ArrowRight size={17}/></a></section></div></div>}

@@ -1,4 +1,4 @@
-export type Category = "Mobile Accessories" | "Gifts" | "Stationery";
+﻿export type Category = "Mobile Accessories" | "Gifts" | "Stationery" | "Sports Items" | "Printing Services";
 export type Product = {
   id: string; slug: string; name: string; category: Category; price: number;
   originalPrice?: number; rating: number; reviews: number; stock: number;

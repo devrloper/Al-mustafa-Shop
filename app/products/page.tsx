@@ -1,11 +1,11 @@
- "use client";
+﻿ "use client";
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { SlidersHorizontal, Search, X } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import type { Category } from "@/types";
-const categories = ["All categories","Mobile Accessories","Gifts","Stationery"];
+const categories = ["All categories","Stationery","Gifts","Mobile Accessories","Sports Items","Printing Services"];
 export default function ProductsPage() {
  const params=useSearchParams();
  const [query,setQuery]=useState(params.get("q")||"");

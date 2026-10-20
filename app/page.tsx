@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Gift, Headphones, Printer, Trophy } from "lucide-react";
@@ -27,7 +27,7 @@ export default function HomePage() {
   <section id="categories" className="section container"><div className="section-heading"><div><span className="eyebrow">MADE FOR SCHOOL, HOME &amp; EVERYDAY</span><h2>Find what you <em>came for.</em></h2><p>Explore the collections and services at Al-Mustafa.</p></div><Link className="text-link" href="/products">View all products <ArrowRight size={17}/></Link></div>
    <div className="category-grid">{categories.map((c,i)=><motion.div className={`category-card category-${i+1}`} key={c.name} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*.06}}><Image src={c.image} alt={c.name} fill sizes="(max-width: 700px) 100vw, 33vw" className="cover-image" unoptimized/><div className="category-shade"/><div className="category-bottom"><span className="category-icon"><c.icon size={19}/></span><h3>{c.name}</h3><p>{c.desc}</p><Link href={c.href}>Explore collection <ArrowRight size={17}/></Link></div></motion.div>)}</div>
   </section>
-  <section className="section featured-section"><div className="container"><div className="section-heading"><div><span className="eyebrow">SHOP THE STORE</span><h2>Popular <em>products.</em></h2><p>Useful picks from Al-Mustafa.</p></div><Link className="text-link" href="/products">Shop all products <ArrowRight size={17}/></Link></div><div className="product-grid">{products.slice(0,8).map((p,i)=><ProductCard key={p.id} product={p} index={i}/>)}</div></div></section>
+  <section className="section featured-section"><div className="container"><div className="section-heading"><div><span className="eyebrow">SHOP THE STORE</span><h2>Popular <em>products.</em></h2><p>Useful picks from Al-Mustafa.</p></div><Link className="text-link" href="/products">Shop all products <ArrowRight size={17}/></Link></div><div className="product-grid">{products.filter((p) => ["p1","p6","p14","p10","p17","p20","p22","p25","p18","p21","p24","p29"].includes(p.id)).map((p,i)=><ProductCard key={p.id} product={p} index={i}/>)}</div></div></section>
   <section className="promo-section container"><div className="promo-panel"><div className="promo-copy"><span className="eyebrow">PHOTOCOPY &amp; PRINT</span><h2>Make your next<br/><em>project look sharp.</em></h2><p>From photocopies and color prints to scanning, lamination and spiral binding, we’re ready to help.</p><Link className="btn btn-white" href="/printing-services">View printing services <ArrowRight size={18}/></Link></div><div className="promo-art"><Image src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=1000&q=85" alt="Printer and printing supplies" fill sizes="40vw" className="cover-image" unoptimized/></div></div></section>
  </div>;
 }

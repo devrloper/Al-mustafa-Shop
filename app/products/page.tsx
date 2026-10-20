@@ -1,15 +1,14 @@
  "use client";
-import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { SlidersHorizontal, Search, X } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import type { Category } from "@/types";
 const categories = ["All categories","Stationery","Gifts","Mobile Accessories","Sports Items","Printing Services"];
 export default function ProductsPage() {
- const params=useSearchParams();
- const [query,setQuery]=useState(params.get("q")||"");
- const [category,setCategory]=useState(params.get("category")||"All categories");
+ const [query,setQuery]=useState("");
+ const [category,setCategory]=useState("All categories");
+ useEffect(()=>{const params=new URLSearchParams(window.location.search);setQuery(params.get("q")||"");setCategory(params.get("category")||"All categories");},[]);
  const [sort,setSort]=useState("featured");
  const [inStock,setInStock]=useState(false);
  const [discount,setDiscount]=useState(false);
